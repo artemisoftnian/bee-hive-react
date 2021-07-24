@@ -1,6 +1,6 @@
 import  RouteLayOut   from './components/RouteLayOut'
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-//import { HashRouter as Router, Switch, Route} from 'react-router-dom'
+//import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { HashRouter as Router, Switch, Route} from 'react-router-dom'
 //import Nav from './components/Nav';
 //import Home from './routes/Home/Home';
 import Login from './routes/Login/Login'
