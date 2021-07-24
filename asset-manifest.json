@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/bee-hive-react/static/css/main.64409d67.chunk.css",
+    "main.js": "/bee-hive-react/static/js/main.d397f11d.chunk.js",
+    "main.js.map": "/bee-hive-react/static/js/main.d397f11d.chunk.js.map",
+    "runtime-main.js": "/bee-hive-react/static/js/runtime-main.e2ddd5e6.js",
+    "runtime-main.js.map": "/bee-hive-react/static/js/runtime-main.e2ddd5e6.js.map",
+    "static/js/2.3e73c08a.chunk.js": "/bee-hive-react/static/js/2.3e73c08a.chunk.js",
+    "static/js/2.3e73c08a.chunk.js.map": "/bee-hive-react/static/js/2.3e73c08a.chunk.js.map",
+    "static/js/3.52ad07d3.chunk.js": "/bee-hive-react/static/js/3.52ad07d3.chunk.js",
+    "static/js/3.52ad07d3.chunk.js.map": "/bee-hive-react/static/js/3.52ad07d3.chunk.js.map",
+    "index.html": "/bee-hive-react/index.html",
+    "static/css/main.64409d67.chunk.css.map": "/bee-hive-react/static/css/main.64409d67.chunk.css.map",
+    "static/js/2.3e73c08a.chunk.js.LICENSE.txt": "/bee-hive-react/static/js/2.3e73c08a.chunk.js.LICENSE.txt",
+    "static/media/avatar-bee.84afdb85.png": "/bee-hive-react/static/media/avatar-bee.84afdb85.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e2ddd5e6.js",
+    "static/js/2.3e73c08a.chunk.js",
+    "static/css/main.64409d67.chunk.css",
+    "static/js/main.d397f11d.chunk.js"
+  ]
+}
