@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext} from 'react';
 import { useStyles } from './ProfileStyle'
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
@@ -9,6 +9,7 @@ import Paper from '@material-ui/core/Paper';
 import Messages from '../../components/Messages';
 import SchoolInfo from '../../components/SchoolInfo';
 import ChildInfo from '../../components/ChildInfo';
+import  UserContext  from "../../providers/UserProvider";
 import "firebase/auth";
 
 const apiNodes = {
@@ -18,6 +19,9 @@ const apiNodes = {
 
 
 export default function Dashboard() {
+
+  const user = useContext(UserContext);
+  const {photoURL, displayName, email, userType} = user?user:[];
 
   const classes = useStyles();
 
@@ -37,11 +41,9 @@ export default function Dashboard() {
             guardian: []
         })
 
-
-
   useEffect(() => {
 
-    axios(`${apiNodes.parent}${"test@test.com"}`)
+    axios(`${apiNodes.parent}${email?email:"test@test.com"}`)
       .then(res => { 
         setSchool(res.data.School[0])
         setGuardian(res.data.Guardian[0])

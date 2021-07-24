@@ -1,11 +1,9 @@
-import React from 'react';
-
 import logo from '../../logo.png';
 import '../../App.css';
 
 import { Link } from 'react-router-dom'
 
-function Home() {
+export default function About() {
   return (
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -20,5 +18,3 @@ function Home() {
         </header>
   );
 }
-
-export default Home;

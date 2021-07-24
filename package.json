@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "Bee-Hive its a remote child behaviour report app between school and parents",
   "private": true,
-  "homepage": "https://artemisoftnian.github.io/bee-hive-react",
+  "homepage": ".",
+  "homepage-git": "https://artemisoftnian.github.io/bee-hive-react",
   "dependencies": {
     "@material-ui/core": "^4.12.2",
     "@material-ui/icons": "^4.11.2",

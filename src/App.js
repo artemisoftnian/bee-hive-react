@@ -3,20 +3,20 @@ import './App.css';
 
 import { ThemeProvider } from '@material-ui/core';
 import GlobalStyles from './components/GlobalStyles';
-import { AuthProvider } from './context/AuthContext';
+import  UserProvider  from './providers/UserProvider';
 
 import theme from './theme';
-import Routes from './Routes';
+import Routes from './app/Routes';
 
 function App() {
 
   return (
-    <AuthProvider>
+    <UserProvider>
       <ThemeProvider theme={theme}>
           <GlobalStyles />
           <Routes />
       </ThemeProvider>
-    </AuthProvider>
+    </UserProvider>
   );
 }
 

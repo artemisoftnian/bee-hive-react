@@ -1,3 +1,5 @@
+import React, { useContext} from 'react';
+import { UserContext } from "../providers/UserProvider";
 import { Link as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
@@ -25,11 +27,17 @@ const useStyles = makeStyles(theme => ({
 export default function ProfileBlock(props){
     const { className, ...rest } = props;
     const classes = useStyles();
-  
+
+    const tUser = useContext(UserContext);
+    const {photoURL, displayName, email, userType} = tUser?tUser:[];
+
+
+
     const user = {
-      name: 'Test User',
-      avatar: AvatarBee,
-      bio: 'Student Guardian'
+      name: displayName?displayName:'Test User Bee',
+      avatar: photoURL?photoURL:AvatarBee,
+      bio: userType?userType:'Guardian',
+      email: email?email:"test@test.com"
     };
 
     return (

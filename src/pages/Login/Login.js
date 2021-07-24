@@ -11,15 +11,13 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Footer from '../../theme/layouts/Footer'
 import SiteLogo from '../../bh-logo.png'
-import { config } from '../../helpers/config'
+import { config } from '../../app/config'
 
 import firebase from "firebase/app";
 import "firebase/auth";
 import { 
   FirebaseAuthProvider, 
-  FirebaseAuthConsumer, 
-  IfFirebaseAuthed, 
-  IfFirebaseAuthedAnd
+  IfFirebaseAuthed
 } from '@react-firebase/auth'
 import { Redirect } from 'react-router-dom';
 
@@ -56,14 +54,27 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignInSide() {
+export default function Login(props) {
   const classes = useStyles();
 
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
 
+  function loginHandler(e){
+      e.preventDefault()
+      firebase.auth().signInWithEmailAndPassword(user, pass)
+      .then(user => {
+          console.log(props)
+          props.history.push("/profile")
+      })
+      .catch(error => {
+        console.log(error)
+      })
+
+  }
+
   return (
-    <FirebaseAuthProvider {...config} firebase={firebase}> 
+    
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} >      
@@ -80,6 +91,8 @@ export default function SignInSide() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
+
+          <FirebaseAuthProvider {...config} firebase={firebase}> 
           <form className={classes.form} noValidate>
             <TextField
               variant="outlined"
@@ -116,44 +129,13 @@ export default function SignInSide() {
               variant="contained"
               color="primary"
               className={classes.submit}
-              onClick={ ()=> {
-                firebase.auth().signInWithEmailAndPassword(user, pass)
-              } }   
+              onClick={(e) => {                
+                loginHandler(e);                
+              }}
             >
               Sign In
-
             </Button>  
 
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-              onClick={() => {
-                firebase.auth().signInAnonymously();
-              }}
-             >
-              Sign In Anonymously
-            </Button>                                
-
-            <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-            onClick={() => {
-              const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-              firebase.auth().signInWithPopup(googleAuthProvider);
-            }}
-          >
-            Sign In With Google
-          </Button>
-
-            <Link href="/profile" variant="body2">
-                  Panic Button
-            </Link>    
 
             <Grid container>
               <Grid item xs>
@@ -177,41 +159,24 @@ export default function SignInSide() {
               variant="contained"
               color="primary"
               className={classes.submit}
-              onClick={() => {
+              onClick={(e) => {
+                e.preventDefault()
                 firebase.auth().signOut();                
               }}
              >
               Sign Out
-            </Button>                 
-
-              {() => { }}
+            </Button>
             </IfFirebaseAuthed>
-            <IfFirebaseAuthedAnd
-              filter={({ providerId }) => providerId !== "anonymous"}
-            >
-              {({ providerId }) => {
-                return <div>You are authenticated with {providerId}</div>;
-              }}
-            </IfFirebaseAuthedAnd> 
-            <FirebaseAuthConsumer>
-                {({ isSignedIn, user, providerId }) => {
-                  return (
-                    <pre style={{ height: 300, overflow: "auto" }}>
-                      {JSON.stringify({ isSignedIn, user, providerId }, null, 2)}
-                    </pre>
-                  );
-                }}
-            </FirebaseAuthConsumer>   
-
 
           </form>
+          </FirebaseAuthProvider>
         </div>
       </Grid>
     </Grid>
 
 
 
-    </FirebaseAuthProvider>
+
 
 
   );

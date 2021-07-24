@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Signup() {
+export default function Signup() {
   const classes = useStyles();
 
   return (
@@ -120,5 +120,3 @@ function Signup() {
     </Container>
   );
 }
-
-export default Signup;
