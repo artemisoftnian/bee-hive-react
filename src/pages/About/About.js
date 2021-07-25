@@ -1,4 +1,5 @@
 import logo from '../../logo.png';
+import Footer from '../../theme/layouts/Footer'
 import '../../App.css';
 
 import { Link } from 'react-router-dom'
@@ -6,15 +7,12 @@ import { Link } from 'react-router-dom'
 export default function About() {
   return (
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <p style={{marginBottom:30, fontSize:25}}>Welcome to the Hive!</p>
 
-          <p>
-            Welcome to the Hive!
-          </p>
+          <img src={logo} className="App-logo" alt="logo" />          
 
-          <Link to="/login">Please Login</Link>  - OR - <Link to="/signup"> Create a new account</Link>      
-
-
+          <Link to="/profile"> Please, Go back to your profile!</Link>
+          <Footer />
         </header>
   );
 }

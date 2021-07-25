@@ -13,6 +13,7 @@ import SidebarNavigation from '../../components/SidebarNavigation';
 import StudentList from '../../components/StudentList';
 import MessageOutlinedIcon from '@material-ui/icons/MessageOutlined';
 import ErrorOutlineOutlinedIcon from '@material-ui/icons/ErrorOutlineOutlined';
+import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 
 
 const useStyles = makeStyles(theme => ({
@@ -74,10 +75,13 @@ export default function Sidebar(props){
       title: 'Register'
     },
     {
-      href: '/404',
-      icon: <ErrorOutlineOutlinedIcon />,
-      title: '404 Page'
+      href: '/about',
+      icon: <InfoOutlinedIcon/>,
+      title: 'About'
     }
+
+    
+
   ];
 
   return (

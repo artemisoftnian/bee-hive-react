@@ -22,7 +22,7 @@ export default function MessagesGuardian(props) {
           <TableRow>
             <TableCell>Teacher</TableCell>
             <TableCell>Message</TableCell>
-            <TableCell>Readed</TableCell>
+            <TableCell></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

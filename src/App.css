@@ -43,14 +43,14 @@ nav {
 
 
 .App-header {
-  background-color: #53565e;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #ff6000;
   padding-top:40px;
 }
 

@@ -17,11 +17,10 @@ const apiNodes = {
   messages: "https://x8ki-letl-twmt.n7.xano.io/api:IE4r3vGs/messages?students_id="
 }
 
-
-export default function Dashboard() {
+export default function Profile() {
 
   const user = useContext(UserContext);
-  const {photoURL, displayName, email, userType} = user?user:[];
+  const {email} = user?user:[];
 
   const classes = useStyles();
 

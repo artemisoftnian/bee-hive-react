@@ -19,8 +19,6 @@ import {
   FirebaseAuthProvider, 
   IfFirebaseAuthed
 } from '@react-firebase/auth'
-import { Redirect } from 'react-router-dom';
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
